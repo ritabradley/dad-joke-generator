@@ -9,3 +9,5 @@ const fetchJoke = async () => {
     const jokeData = await res.json();
     joke.innerText = jokeData.joke;
 };
+
+generateBtn.addEventListener('click', fetchJoke);
