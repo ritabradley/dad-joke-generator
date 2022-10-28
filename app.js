@@ -13,10 +13,11 @@ const addJokeContent = async () => {
 }
 
 const fetchJoke = async () => {
+    const headers = {
+        headers: { accept: 'application/json' },
+    }
     try {
-        const res = await fetch(url, {
-            headers: { accept: 'application/json' },
-        });
+        const res = await fetch(url, headers);
         const jokeData = await res.json();
         return jokeData.joke;
     } catch (err) {
